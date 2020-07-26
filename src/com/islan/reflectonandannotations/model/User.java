@@ -2,6 +2,7 @@ package com.islan.reflectonandannotations.model;
 
 import java.time.LocalDate;
 
+import com.islan.reflectonandannotations.annotation.CPF;
 import com.islan.reflectonandannotations.annotation.MinAge;
 
 public class User {
@@ -10,6 +11,7 @@ public class User {
 	@MinAge(18)
 	private LocalDate birthDate;
 	
+	@CPF
 	private String cpf;
 	
 	
