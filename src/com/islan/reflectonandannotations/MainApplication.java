@@ -45,7 +45,7 @@ public class MainApplication {
 			}
 		}
 		
-		return false;
+		throw new RuntimeException("@MinAge Annotation not found in the entity.");
 	}
 
 }
