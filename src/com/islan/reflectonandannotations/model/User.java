@@ -1,8 +1,15 @@
 package com.islan.reflectonandannotations.model;
 
+import java.time.LocalDate;
+
+import com.islan.reflectonandannotations.annotation.MinAge;
+
 public class User {
 	private String name;
-	private Integer age;
+	
+	@MinAge(18)
+	private LocalDate birthDate;
+	
 	private String cpf;
 	
 	
@@ -11,10 +18,10 @@ public class User {
 	}
 	
 	
-	public User(String name, Integer age, String cpf) {
+	public User(String name, LocalDate birthDate, String cpf) {
 		super();
 		this.name = name;
-		this.age = age;
+		this.birthDate = birthDate;
 		this.cpf = cpf;
 	}
 	
@@ -27,12 +34,12 @@ public class User {
 		this.name = name;
 	}
 
-	public Integer getAge() {
-		return age;
+	public LocalDate getBirthDate() {
+		return birthDate;
 	}
 
-	public void setAge(Integer age) {
-		this.age = age;
+	public void setBirthDate(LocalDate birthDate) {
+		this.birthDate = birthDate;
 	}
 
 	public String getCpf() {
@@ -46,7 +53,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", age=" + age + ", cpf=" + cpf + "]";
+		return "User [name=" + name + ", birthDate=" + birthDate + ", cpf=" + cpf + "]";
 	}
 	
 
@@ -54,7 +61,7 @@ public class User {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((age == null) ? 0 : age.hashCode());
+		result = prime * result + ((birthDate == null) ? 0 : birthDate.hashCode());
 		result = prime * result + ((cpf == null) ? 0 : cpf.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -70,10 +77,10 @@ public class User {
 		if (getClass() != obj.getClass())
 			return false;
 		User other = (User) obj;
-		if (age == null) {
-			if (other.age != null)
+		if (birthDate == null) {
+			if (other.birthDate != null)
 				return false;
-		} else if (!age.equals(other.age))
+		} else if (!birthDate.equals(other.birthDate))
 			return false;
 		if (cpf == null) {
 			if (other.cpf != null)
